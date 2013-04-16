@@ -3,4 +3,5 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
-PATH=$PATH:$OPENSHIFT_REPO_DIR/lib64/R easy_install rpy2
+PATH=$PATH:$OPENSHIFT_REPO_DIR/lib64/R
+export PATH
