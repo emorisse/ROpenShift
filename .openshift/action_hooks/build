@@ -11,6 +11,7 @@ if [ ! -e ${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin/pip ]; then
 	${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin/python setup.py install
 	popd
 fi
-PATH=$PATH:$OPENSHIFT_REPO_DIR/lib64/R:${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin
+# force use of local python, not system
+PATH=$OPENSHIFT_REPO_DIR/lib64/R:${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin:$PATH
 export PATH
 pip install rpy2 --r-home=$OPENSHIFT_REPO_DIR/lib64/R
