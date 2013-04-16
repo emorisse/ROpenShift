@@ -27,17 +27,9 @@ def run_simple_httpd_server(app, ip, port=8080):
 
 import os
 import sys
- 
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
-virtenv = PYCART_DIR + '/virtenv/'
-os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
-virtualenv = os.path.join(virtenv, 'lib/python2.6/site-packages')
-#virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-try:
-    execfile(virtualenv, dict(__file__=virtualenv))
-except:
-    pass
 
+os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
+ 
 from rpy2.robjects import Formula, r
 from rpy2.robjects.packages import importr
 
