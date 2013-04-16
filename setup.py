@@ -5,7 +5,7 @@ import sys
 
 PYCART_DIR = ''.join(['python-', '.'.join(map(str, sys.version_info[:2]))])
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
-virtenv = PYCART_DIR + '/virtenv/'
+virtenv = PYCART_DIR + '/virtenv/venv'
 sys.path.append(os.path.join(os.environ['OPENSHIFT_HOMEDIR'], virtenv, 'lib/python2.6/site-packages'))
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
 os.environ['LD_LIBRARY_PATH'] = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin')
