@@ -9,8 +9,7 @@ virtenv = PYCART_DIR + '/virtenv/venv'
 sys.path.append(os.path.join(os.environ['OPENSHIFT_HOMEDIR'], virtenv, 'lib/python2.6/site-packages'))
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
 os.environ['LD_LIBRARY_PATH'] = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin')
-virtualenv = os.path.join(virtenv, 'lib/python2.6/site-packages')
-print(sys.path)
+virtualenv = os.path.join(PYCART_DIR, "opt")
 #virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
