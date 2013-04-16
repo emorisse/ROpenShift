@@ -3,9 +3,9 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
-PATH=$OPENSHIFT_REPO_DIR/lib64/R:${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin:$PATH
-export PATH
-PYTHONPATH=~/python-3.3/virtenv/venv/lib/python3.3/
-export PYTHONPATH
-virtualenv ~/python-3.3/opt
-~/python-3.3/opt/bin/pip install rpy2
+#PATH=$OPENSHIFT_REPO_DIR/lib64/R:${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin:$PATH
+#export PATH
+#PYTHONPATH=~/python-3.3/virtenv/venv/lib/python3.3/
+#export PYTHONPATH
+#virtualenv ~/python-3.3/opt
+#~/python-3.3/opt/bin/pip install rpy2
