@@ -5,7 +5,7 @@ import sys
 
 
 os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
-print(os.environ['PATH')
+print(os.environ['PATH'])
 
 
 setup(name='YourAppName', version='1.0',
