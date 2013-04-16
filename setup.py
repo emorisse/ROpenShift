@@ -1,4 +1,6 @@
 from setuptools import setup
+import os
+import sys
 
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'] + "/lib64/R/bin"))
 
