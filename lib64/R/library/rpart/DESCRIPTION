@@ -21,4 +21,4 @@ Author: Terry Therneau [aut],
   Beth Atkinson [aut],
   Brian Ripley [aut, trl, cre] (author of R port)
 Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
-Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 16:36:52 UTC; unix
+Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 20:22:00 UTC; unix

@@ -25,4 +25,4 @@ LicenseDetails: The Matrix package includes libraries AMD, CHOLMOD,
         LGPL licenses.  See the directory doc/UFsparse for details.
 URL: http://Matrix.R-forge.R-project.org/
 Packaged: 2013-02-02 19:38:40 UTC; maechler
-Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 16:26:42 UTC; unix
+Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 20:12:27 UTC; unix

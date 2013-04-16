@@ -9,4 +9,4 @@ Description: Support for parallel computation, including by forking
    and random-number generation.
 License: Part of R 2.15.3
 Enhances: snow
-Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 16:22:42 UTC; unix
+Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 20:09:57 UTC; unix

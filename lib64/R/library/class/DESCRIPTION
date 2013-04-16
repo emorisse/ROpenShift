@@ -14,4 +14,4 @@ License: GPL-2 | GPL-3
 URL: http://www.stats.ox.ac.uk/pub/MASS4/
 LazyLoad: yes
 Packaged: 2012-10-08 10:07:19 UTC; ripley
-Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 16:37:13 UTC; unix
+Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 20:22:18 UTC; unix

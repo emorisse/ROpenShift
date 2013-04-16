@@ -25,4 +25,4 @@ Author: Brian Ripley [aut, cre, cph],
   Albrecht Gebhardt [trl] (partial port ca 1998),
   David Firth [ctb]
 Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
-Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 16:25:10 UTC; unix
+Built: R 2.15.3; x86_64-unknown-linux-gnu; 2013-04-16 20:11:03 UTC; unix
