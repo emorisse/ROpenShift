@@ -14,4 +14,5 @@ fi
 # force use of local python, not system
 PATH=$OPENSHIFT_REPO_DIR/lib64/R:${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin:$PATH
 export PATH
+mkdir $OPENSHIFT_HOMEDIR/.pip
 pip install --install-option="--r-home=$OPENSHIFT_REPO_DIR/lib64/R" rpy2
