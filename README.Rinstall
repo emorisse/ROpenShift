@@ -20,6 +20,11 @@ tar jcvf RforOpenShift.tar.bz2 bin lib64 share
 rhc app create -a r -t python-3.3
 cd r
 tar zxvf ${HOME}/RforOpenShift.tar.bz2
+pushd ${HOME}/lib64/R/bin
+cp R R.ori
+cat R.ori | sed -e "s/$HOME/$OPENSHIFT_$OPENSHIFT_REPO_DIR/g" > R
+rm R.ori
+popd
 git add .
 git commit -a -m "initial commit with R program"
 git push
