@@ -28,7 +28,7 @@ def run_simple_httpd_server(app, ip, port=8080):
 import os
 import sys
 
-#os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
+os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
 #sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'lib'))
 #print("sys.path = ")
 #print(sys.path)
