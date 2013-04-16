@@ -1,17 +1,4 @@
 from setuptools import setup
-import os
-import sys
-
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
-virtenv = os.environ['APPDIR'] + '/virtenv/'
-os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
-#virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-virtualenv = os.path.join(virtenv)
-try:
-    execfile(virtualenv, dict(__file__=virtualenv))
-except:
-    pass
- 
 
 setup(name='YourAppName', version='1.0',
       description='OpenShift Python-3.3 Community Cartridge based application',

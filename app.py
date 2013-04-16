@@ -25,6 +25,19 @@ def run_simple_httpd_server(app, ip, port=8080):
 # line, it's possible required libraries won't be in your searchable path
 # 
 
+import os
+import sys
+ 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
+virtenv = os.environ['APPDIR'] + '/virtenv/'
+os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
+virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
+try:
+    execfile(virtualenv, dict(__file__=virtualenv))
+except:
+    pass
+
 from rpy2.robjects import Formula, r
 from rpy2.robjects.packages import importr
 
