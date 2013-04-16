@@ -5,7 +5,6 @@ import sys
 
 PYCART_DIR = ''.join(['python-', '.'.join(map(str, sys.version_info[:2]))])
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin'))
 virtenv = PYCART_DIR + '/virtenv/'
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
 os.environ['LD_LIBRARY_PATH'] = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin')
@@ -16,6 +15,8 @@ try:
     execfile(virtualenv, dict(__file__=virtualenv))
 except:
     pass
+
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin'))
 
 
 setup(name='YourAppName', version='1.0',
