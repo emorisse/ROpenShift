@@ -25,6 +25,9 @@ def run_simple_httpd_server(app, ip, port=8080):
 # line, it's possible required libraries won't be in your searchable path
 # 
 
+from rpy2.robjects import Formula, r
+from rpy2.robjects.packages import importr
+
 
 #
 #  main():
@@ -37,3 +40,11 @@ if __name__ == '__main__':
    print('Starting WSGIServer on %s:%d ... ' % (ip, port))
    run_simple_httpd_server(zapp.application, ip, port)
 
+
+rf = importr("randomForest")
+iris = r['iris']
+fmla = Formula(Species ~ .)
+iris_rf = rf.randomForest(fmla, iris)
+predict = r('predict')
+iris_predict = predict(iris_rf, iris)
+iris_predict
