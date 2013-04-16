@@ -5,3 +5,4 @@
 # could be python, php, ruby, etc.
 PATH=$PATH:$OPENSHIFT_REPO_DIR/lib64/R
 export PATH
+pip install rpy2
