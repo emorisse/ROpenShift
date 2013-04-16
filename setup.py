@@ -8,6 +8,7 @@ sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshif
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin'))
 virtenv = PYCART_DIR + '/virtenv/'
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
+os.environ['LD_LIBRARY_PATH'] = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin')
 virtualenv = os.path.join(virtenv, 'lib/python2.6/site-packages')
 print(sys.path)
 #virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
