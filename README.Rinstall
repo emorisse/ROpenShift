@@ -1,0 +1,24 @@
+Prerequsites on RHEL 6.2+ base install
+gcc
+gcc-gfortran
+gcc-c++
+readline-devel
+
+yum install -y gcc gcc-gfortran gcc-c++ readline-devel
+wget http://cran.rstudio.com/src/base/R-2/R-2.15.3.tar.gz
+tar zxvf R-2.15.3.tar.gz
+cd R-2.15.3
+./configure --prefix=${HOME} --exec-prefix=${HOME} --with-x=no
+make
+# respond to overdue correspondence, go get a coffee, or something
+# this will take a while
+make install
+cd ${HOME}
+tar jcvf RforOpenShift.tar.bz2 bin lib64 share
+
+# create and configure the openshift app
+rhc app create -a r -t python-3.3
+cd r
+tar zxvf ${HOME}/RforOpenShift.tar.bz2
+git add .
+git commit -a
