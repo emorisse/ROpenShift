@@ -1,8 +1,8 @@
 #!/bin/sh
 # Shell wrapper for R executable.
 
-R_HOME_DIR=$OPENSHIFT_REPO_DIR/lib64/R
-if test "${R_HOME_DIR}" = "$OPENSHIFT_REPO_DIR/lib64/R"; then
+R_HOME_DIR=/home/esm/lib64/R
+if test "${R_HOME_DIR}" = "/home/esm/lib64/R"; then
    case "linux-gnu" in
    linux*)
      run_arch=`uname -m`
@@ -16,10 +16,10 @@ if test "${R_HOME_DIR}" = "$OPENSHIFT_REPO_DIR/lib64/R"; then
           libnn_fallback=lib64
         ;;
      esac
-     if [ -x "$OPENSHIFT_REPO_DIR/${libnn}/R/bin/exec/R" ]; then
-        R_HOME_DIR="$OPENSHIFT_REPO_DIR/${libnn}/R"
-     elif [ -x "$OPENSHIFT_REPO_DIR/${libnn_fallback}/R/bin/exec/R" ]; then
-        R_HOME_DIR="$OPENSHIFT_REPO_DIR/${libnn_fallback}/R"
+     if [ -x "/home/esm/${libnn}/R/bin/exec/R" ]; then
+        R_HOME_DIR="/home/esm/${libnn}/R"
+     elif [ -x "/home/esm/${libnn_fallback}/R/bin/exec/R" ]; then
+        R_HOME_DIR="/home/esm/${libnn_fallback}/R"
      ## else -- leave alone (might be a sub-arch)
      fi
      ;;
@@ -32,11 +32,11 @@ if test -n "${R_HOME}" && \
 fi
 R_HOME="${R_HOME_DIR}"
 export R_HOME
-R_SHARE_DIR=$OPENSHIFT_REPO_DIR/lib64/R/share
+R_SHARE_DIR=/home/esm/lib64/R/share
 export R_SHARE_DIR
-R_INCLUDE_DIR=$OPENSHIFT_REPO_DIR/lib64/R/include
+R_INCLUDE_DIR=/home/esm/lib64/R/include
 export R_INCLUDE_DIR
-R_DOC_DIR=$OPENSHIFT_REPO_DIR/lib64/R/doc
+R_DOC_DIR=/home/esm/lib64/R/doc
 export R_DOC_DIR
 
 # Since this script can be called recursively, we allow R_ARCH to

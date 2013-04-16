@@ -8,7 +8,7 @@ yum install -y gcc gcc-gfortran gcc-c++ readline-devel
 wget http://cran.rstudio.com/src/base/R-2/R-2.15.3.tar.gz
 tar zxvf R-2.15.3.tar.gz
 cd R-2.15.3
-./configure --prefix=${HOME} --exec-prefix=${HOME} --with-x=no
+./configure --prefix=${HOME} --exec-prefix=${HOME} --with-x=no --enable-R-shlib
 make
 # respond to overdue correspondence, go get a coffee, or something
 # this will take a while
@@ -22,7 +22,7 @@ cd r
 tar zxvf ${HOME}/RforOpenShift.tar.bz2
 pushd ${HOME}/lib64/R/bin
 cp R R.ori
-cat R.ori | sed -e "s/$HOME/$OPENSHIFT_$OPENSHIFT_REPO_DIR/g" > R
+sed -e "s/$HOME/$OPENSHIFT_REPO_DIR/g" R.ori > R
 rm R.ori
 popd
 git add .
