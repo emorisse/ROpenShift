@@ -9,3 +9,4 @@
 #export PYTHONPATH
 #virtualenv ~/python-3.3/opt
 #~/python-3.3/opt/bin/pip install rpy2
+export LD_LIBRARY_PATH=${OPENSHIFT_REPO_DIR}lib64/R/lib:$LD_LIBRARY_PATH
