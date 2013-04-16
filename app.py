@@ -28,10 +28,10 @@ def run_simple_httpd_server(app, ip, port=8080):
 import os
 import sys
 
-os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'lib'))
-print("sys.path = ")
-print(sys.path)
+#os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
+#sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'lib'))
+#print("sys.path = ")
+#print(sys.path)
 #ld_library_path = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64/R/lib:') + os.environ['LD_LIBRARY_PATH']
 #os.putenv('LD_LIBRARY_PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64/R/lib:') + os.environ['LD_LIBRARY_PATH'])
 #os.putenv('LD_LIBRARY_PATH',ld_library_path)
@@ -60,4 +60,4 @@ fmla = Formula("Species ~ .")
 iris_rf = rf.randomForest(fmla, iris)
 predict = r('predict')
 iris_predict = predict(iris_rf, iris)
-iris_predict
+print(iris_predict)
