@@ -16,6 +16,7 @@ try:
 except:
     pass
 
+os.environ['R_HOME'] = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin')
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin'))
 
 
