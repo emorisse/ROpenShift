@@ -7,7 +7,7 @@ if [ ! -e $OPENSHIFT_DATA_DIR/bin/pip ]; then
 	pushd $OPENSHIFT_TMP_DIR
 	wget http://pypi.python.org/packages/source/p/pip/pip-1.1.tar.gz
 	tar zxf pip-1.1.tar.gz
-	cd pip
+	cd pip-1.1
 	$OPENSHIFT_DATA_DIR/bin/python setup.py install
 	popd
 fi
