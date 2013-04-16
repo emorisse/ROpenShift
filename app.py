@@ -29,7 +29,7 @@ import os
 import sys
 
 os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
-os.putenv('R_HOME',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R'))
+os.putenv('LD_LIBRARY_PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'lib'))
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'lib'))
 print(sys.path)
  
