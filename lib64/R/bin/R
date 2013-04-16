@@ -1,7 +1,7 @@
 #!/bin/sh
 # Shell wrapper for R executable.
 
-R_HOME_DIR=OPENSHIFT_REPO_DIR/lib64/R
+R_HOME_DIR=$OPENSHIFT_REPO_DIR/lib64/R
 if test "${R_HOME_DIR}" = "$OPENSHIFT_REPO_DIR/lib64/R"; then
    case "linux-gnu" in
    linux*)
