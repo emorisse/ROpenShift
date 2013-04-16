@@ -1,5 +1,7 @@
 from setuptools import setup
 
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'] . "/lib64/R/bin"))
+
 setup(name='YourAppName', version='1.0',
       description='OpenShift Python-3.3 Community Cartridge based application',
       author='Your Name', author_email='ramr@example.org',
