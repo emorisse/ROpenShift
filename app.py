@@ -30,6 +30,7 @@ import sys
 
 os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R'))
+print(sys.path)
  
 from rpy2.robjects import Formula, r
 from rpy2.robjects.packages import importr
