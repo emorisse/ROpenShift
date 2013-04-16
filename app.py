@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
 rf = importr("randomForest")
 iris = r['iris']
-fmla = Formula(Species ~ .)
+fmla = Formula("Species ~ .")
 iris_rf = rf.randomForest(fmla, iris)
 predict = r('predict')
 iris_predict = predict(iris_rf, iris)
