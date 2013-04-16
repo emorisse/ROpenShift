@@ -4,11 +4,11 @@ import os
 import sys
 
 PYCART_DIR = ''.join(['python-', '.'.join(map(str, sys.version_info[:2]))])
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift', 'lib64/R/bin'))
 virtenv = PYCART_DIR + '/virtenv/'
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
 virtualenv = os.path.join(virtenv, 'lib/python2.6/site-packages')
-print(virtualenv)
+print(sys.path)
 #virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
