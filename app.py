@@ -36,7 +36,7 @@ print(sys.path)
 #os.putenv('LD_LIBRARY_PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64/R/lib:') + os.environ['LD_LIBRARY_PATH'])
 #os.putenv('LD_LIBRARY_PATH',ld_library_path)
 #print("library var = " + ld_library_path)
-Eprint("library = " + os.environ['LD_LIBRARY_PATH'])
+#print("library = " + os.environ['LD_LIBRARY_PATH'])
  
 from rpy2.robjects import Formula, r
 from rpy2.robjects.packages import importr
