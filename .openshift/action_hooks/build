@@ -11,6 +11,6 @@ if [ ! -e $OPENSHIFT_DATA_DIR/bin/pip ]; then
 	${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin/python setup.py install
 	popd
 fi
-PATH=$PATH:$OPENSHIFT_REPO_DIR/lib64/R
+PATH=$PATH:$OPENSHIFT_REPO_DIR/lib64/R:${OPENSHIFT_HOMEDIR}python-3.3/virtenv/venv/bin
 export PATH
 pip install rpy2
