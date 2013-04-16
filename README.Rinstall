@@ -21,4 +21,5 @@ rhc app create -a r -t python-3.3
 cd r
 tar zxvf ${HOME}/RforOpenShift.tar.bz2
 git add .
-git commit -a
+git commit -a -m "initial commit with R program"
+git push
