@@ -3,21 +3,9 @@ from setuptools import setup
 import os
 import sys
 
-PYCART_DIR = ''.join(['python-', '.'.join(map(str, sys.version_info[:2]))])
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
-virtenv = PYCART_DIR + '/virtenv/venv'
-sys.path.append(os.path.join(os.environ['OPENSHIFT_HOMEDIR'], virtenv, 'lib/python2.6/site-packages'))
-os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
-os.environ['LD_LIBRARY_PATH'] = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin')
-virtualenv = os.path.join(PYCART_DIR, "opt")
-#virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-try:
-    execfile(virtualenv, dict(__file__=virtualenv))
-except:
-    pass
 
-os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin') + os.environ['PATH'])
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin'))
+os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
+print(os.environ['PATH')
 
 
 setup(name='YourAppName', version='1.0',
