@@ -11,5 +11,6 @@ setup(name='YourAppName', version='1.0',
                         #  'mysql-connector-python',
                         #  'pymongo',
                         #  'psycopg2',
+								'rpy',
       ],
      )
