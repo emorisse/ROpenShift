@@ -28,7 +28,7 @@ def application(environ, start_response):
 	predict = r('predict')
 	iris_predict = predict(iris_rf, iris)
 	as_character = r('summary')
-	iris_predict = as_character(iris_predict)
+	iris_predict = str(as_character(iris_predict))
 
 	if environ['PATH_INFO'] == '/health':
 		response_body = "1"
