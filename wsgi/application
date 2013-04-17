@@ -27,6 +27,8 @@ def application(environ, start_response):
 	iris_rf = rf.randomForest(fmla, iris)
 	predict = r('predict')
 	iris_predict = predict(iris_rf, iris)
+	as_character = r('as.character')
+	iris_predict = as_character(iris_predict)
 
 	if environ['PATH_INFO'] == '/health':
 		response_body = "1"
@@ -190,7 +192,7 @@ def application(environ, start_response):
       You're welcome to come chat with us in our IRC channel at #openshift on freenode.net
     </li>
   </ul>
-	<pre> ''' + iris_predict + ''' </body> </html>'''
+	<pre> ''' + as.character(iris_predict) + ''' </body> </html>'''
 
 	status = '200 OK'
 	response_headers = [('Content-Type', ctype), ('Content-Length', str(len(response_body)))]
