@@ -5,5 +5,7 @@ for ( p in pkgs ) {
 	rm(f)
 	try(f <- library(p))
 	if ( ! exists("f") ) 
-		install.packages(p, repos="http://cran.us.r-project.org")
+		try(install.packages(p, repos="http://cran.us.r-project.org"))
+	else
+		print("package", p, "already loaded")
 }
