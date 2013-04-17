@@ -23,6 +23,9 @@ def application(environ, start_response):
 	
 	
 	iris_predict = str(robjects.r['pi'][0])
+   r('attach(women)')
+   iris_predict = str(r('summary(women)'))
+
 
 	if environ['PATH_INFO'] == '/health':
 		response_body = "1"
