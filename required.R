@@ -1,4 +1,3 @@
 randomForest
 arm
-lmer4
-fixss
+lme4
