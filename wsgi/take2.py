@@ -9,7 +9,7 @@ def application(environ, start_response):
 	from rpy2.robjects.packages import importr
 	import rpy2.robjects as robjects
 
-	iris_predict = str(r('summary(men)'))
+	iris_predict = str(r('summary(women)'))
 	
 	
 	#
@@ -184,7 +184,7 @@ def application(environ, start_response):
     <li>
       You're welcome to come chat with us in our IRC channel at #openshift on freenode.net
     </li>
-  </ul>
+  </ul> <img src="image.py">
 	<pre> ''' + iris_predict + ''' </pre></body> </html>'''
 
 	status = '200 OK'
