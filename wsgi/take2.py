@@ -9,8 +9,7 @@ def application(environ, start_response):
 	from rpy2.robjects.packages import importr
 	import rpy2.robjects as robjects
 
-	r('attach(women)')
-	iris_predict = str(r('summary(women)'))
+	iris_predict = str(r('summary(men)'))
 	
 	
 	#
