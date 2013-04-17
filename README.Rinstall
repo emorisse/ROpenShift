@@ -19,7 +19,7 @@ tar jcvf RforOpenShift.tar.bz2 bin lib64 share
 # create and configure the openshift app
 rhc app create -a r -t python-3.3
 cd r
-tar zxvf ${HOME}/RforOpenShift.tar.bz2
+tar jxvf ${HOME}/RforOpenShift.tar.bz2
 
 pushd ${HOME}/lib64/R/bin
 # MANUAL: change all of the "home" references to $OPENSHIFT_REPO_DIR in the R file
