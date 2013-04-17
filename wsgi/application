@@ -22,7 +22,7 @@ def application(environ, start_response):
 	   run_simple_httpd_server(zapp.application, ip, port)
 	
 	
-	iris_predict = robjects.r['pi'][0]
+	iris_predict = str(robjects.r['pi'][0])
 
 	if environ['PATH_INFO'] == '/health':
 		response_body = "1"
