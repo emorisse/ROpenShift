@@ -21,10 +21,26 @@ rhc app create -a r -t python-3.3
 cd r
 tar zxvf ${HOME}/RforOpenShift.tar.bz2
 pushd ${HOME}/lib64/R/bin
-cp R R.ori
-sed -e "s/$HOME/$OPENSHIFT_REPO_DIR/g" R.ori > R
-rm R.ori
-popd
+
+# change all of the "home" references to $OPENSHIFT_REPO_DIR in the R file
+
 git add .
 git commit -a -m "initial commit with R program"
 git push
+
+on the OPENSHIFT host, you need to tell R how to find it's libraries.  You can do with with ~/pytohon-3.3/activate_virtenv and add:
+export LD_LIBRARY_PATH="{$OPENSHIFT_REPO_DIR}lib64/R/lib:${OPENSHIFT_HOMEDIR}/python-3.3/opt/lib:${LD_LIBRARY_PATH}"
+
+tell the openshift install where to find R, so it can install rpy2. I did this by changing the PATH before the setup() call
+$ head -7 setup.py 
+from setuptools import setup
+
+import os
+import sys
+
+
+os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
+...
+
+
+

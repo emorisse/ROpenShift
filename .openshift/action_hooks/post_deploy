@@ -3,3 +3,4 @@
 # is deployed and started.  This script gets executed directly, so
 # it could be python, php, ruby, etc.
 #export LD_LIBRARY_PATH=/var/lib/openshift/516d804c5973caab10000001/app-root/runtime/repo/lib64/R/lib:/var/lib/openshift/516d804c5973caab10000001/python-3.3/opt/lib
+${OPENSHIFT_REPO_DIR}lib64/R/bin/R CMD BATCH ${OPENSHIFT_REPO_DIR}instal.packages.R
