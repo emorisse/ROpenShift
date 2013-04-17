@@ -10,8 +10,8 @@ tar zxvf R-2.15.3.tar.gz
 cd R-2.15.3
 ./configure --prefix=${HOME} --exec-prefix=${HOME} --with-x=no --enable-R-shlib
 make
-# respond to overdue correspondence, go get a coffee, or something
 # this will take a while
+# respond to overdue correspondence, go get a coffee, or something
 make install
 cd ${HOME}
 tar jcvf RforOpenShift.tar.bz2 bin lib64 share
@@ -20,15 +20,15 @@ tar jcvf RforOpenShift.tar.bz2 bin lib64 share
 rhc app create -a r -t python-3.3
 cd r
 tar zxvf ${HOME}/RforOpenShift.tar.bz2
+
 pushd ${HOME}/lib64/R/bin
-
-# change all of the "home" references to $OPENSHIFT_REPO_DIR in the R file
-
+# MANUAL: change all of the "home" references to $OPENSHIFT_REPO_DIR in the R file
 git add .
 git commit -a -m "initial commit with R program"
 git push
+popd
 
-on the OPENSHIFT host, you need to tell R how to find it's libraries.  You can do with with ~/pytohon-3.3/activate_virtenv and add:
+MANUAL: on the OPENSHIFT host, you need to tell R how to find its libraries.  You can do with with ~/pytohon-3.3/activate_virtenv and add:
 export LD_LIBRARY_PATH="{$OPENSHIFT_REPO_DIR}lib64/R/lib:${OPENSHIFT_HOMEDIR}/python-3.3/opt/lib:${LD_LIBRARY_PATH}"
 
 tell the openshift install where to find R, so it can install rpy2. I did this by changing the PATH before the setup() call
@@ -43,8 +43,13 @@ os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'b
 ...
 
 
-you can add any R libraries you want to "required.R" and they will be installed. However, they will get installed every time unless you sync them back to your library
+*Adding R libraries*
+Two methods: add the to the library lib64/R/library or have OpenShift
+install them for you. You can add any R libraries you want to "required.R"
+and they will be installed. However, they will get installed every time
+unless you sync them back to your library
 
 cd ~/Projects/RCartridge/r/lib64/R/library
-rsync -avzn 516d804c5973caab10000001@r-howweknowus.rhcloud.com:app-root/runtime/repo/lib64/R/library/ .
+rsync -avz 516d804c5973caab10000001@r-howweknowus.rhcloud.com:app-root/runtime/repo/lib64/R/library/ .
+git add .
 
