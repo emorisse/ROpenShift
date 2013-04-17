@@ -29,18 +29,6 @@ import os
 import sys
 
 os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'bin:',) + os.environ['PATH'])
-#sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'lib'))
-#print("sys.path = ")
-#print(sys.path)
-#ld_library_path = os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64/R/lib:') + os.environ['LD_LIBRARY_PATH']
-#os.putenv('LD_LIBRARY_PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64/R/lib:') + os.environ['LD_LIBRARY_PATH'])
-#os.putenv('LD_LIBRARY_PATH',ld_library_path)
-#print("library var = " + ld_library_path)
-#print("library = " + os.environ['LD_LIBRARY_PATH'])
- 
-from rpy2.robjects import Formula, r
-from rpy2.robjects.packages import importr
-
 
 #
 #  main():
@@ -52,12 +40,3 @@ if __name__ == '__main__':
 
    print('Starting WSGIServer on %s:%d ... ' % (ip, port))
    run_simple_httpd_server(zapp.application, ip, port)
-
-
-rf = importr("randomForest")
-iris = r['iris']
-fmla = Formula("Species ~ .")
-iris_rf = rf.randomForest(fmla, iris)
-predict = r('predict')
-iris_predict = predict(iris_rf, iris)
-print(iris_predict)
