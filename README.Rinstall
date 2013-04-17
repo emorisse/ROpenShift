@@ -43,4 +43,8 @@ os.putenv('PATH',os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'lib64', 'R', 'b
 ...
 
 
+you can add any R libraries you want to "required.R" and they will be installed. However, they will get installed every time unless you sync them back to your library
+
+cd ~/Projects/RCartridge/r/lib64/R/library
+rsync -avzn 516d804c5973caab10000001@r-howweknowus.rhcloud.com:app-root/runtime/repo/lib64/R/library/ .
 
