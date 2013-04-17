@@ -192,7 +192,7 @@ def application(environ, start_response):
       You're welcome to come chat with us in our IRC channel at #openshift on freenode.net
     </li>
   </ul>
-	<pre> ''' + as.character(iris_predict) + ''' </body> </html>'''
+	<pre> ''' + iris_predict + ''' </body> </html>'''
 
 	status = '200 OK'
 	response_headers = [('Content-Type', ctype), ('Content-Length', str(len(response_body)))]
