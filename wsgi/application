@@ -7,6 +7,7 @@ def application(environ, start_response):
 
 	from rpy2.robjects import Formula, r
 	from rpy2.robjects.packages import importr
+	import rpy2.robjects as robjects
 	
 	
 	#
@@ -21,14 +22,7 @@ def application(environ, start_response):
 	   run_simple_httpd_server(zapp.application, ip, port)
 	
 	
-	rf = importr("randomForest")
-	iris = r['iris']
-	fmla = Formula("Species ~ .")
-	iris_rf = rf.randomForest(fmla, iris)
-	predict = r('predict')
-	iris_predict = predict(iris_rf, iris)
-	as_character = r('summary')
-	iris_predict = str(as_character(iris_predict))
+	iris_predict = robjects.r['pi'][0]
 
 	if environ['PATH_INFO'] == '/health':
 		response_body = "1"
