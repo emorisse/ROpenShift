@@ -1,8 +1,33 @@
 #!/usr/bin/env python
 import os
 
+
 def application(environ, start_response):
 	ctype = 'text/plain'
+
+	from rpy2.robjects import Formula, r
+	from rpy2.robjects.packages import importr
+	
+	
+	#
+	#  main():
+	#
+	if __name__ == '__main__':
+	   ip   = os.environ['OPENSHIFT_INTERNAL_IP']
+	   port = 8080
+	   zapp = imp.load_source('application', 'wsgi/application')
+	
+	   print('Starting WSGIServer on %s:%d ... ' % (ip, port))
+	   run_simple_httpd_server(zapp.application, ip, port)
+	
+	
+	rf = importr("randomForest")
+	iris = r['iris']
+	fmla = Formula("Species ~ .")
+	iris_rf = rf.randomForest(fmla, iris)
+	predict = r('predict')
+	iris_predict = predict(iris_rf, iris)
+
 	if environ['PATH_INFO'] == '/health':
 		response_body = "1"
 	elif environ['PATH_INFO'] == '/env':
@@ -165,8 +190,7 @@ def application(environ, start_response):
       You're welcome to come chat with us in our IRC channel at #openshift on freenode.net
     </li>
   </ul>
-</body>
-</html>'''
+	<pre> ''' + iris_predict + ''' </body> </html>'''
 
 	status = '200 OK'
 	response_headers = [('Content-Type', ctype), ('Content-Length', str(len(response_body)))]
