@@ -25,7 +25,7 @@ def application(environ, start_response):
 	#iris_predict = str(robjects.r['pi'][0])
 	r('attach(women)')
 	iris_predict = str(r('summary(EuStockMarkets)'))
-	iris_predict = "# summary on native R data set 'EuStockMarkets'<br>&gt; summary(women)<br>" + iris_predict
+	iris_predict = "# summary on native R data set 'EuStockMarkets'<br>&gt; summary(EuStockMarkets)<br>" + iris_predict
 
 
 	if environ['PATH_INFO'] == '/health':
